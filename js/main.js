@@ -112,6 +112,11 @@ function changeColors() {
     colors.forEach(color => colorList.push(color.id));
 }
 
+document.querySelector("#reset").addEventListener("click", () => {
+    divs.forEach(element => {
+        element.className = `content ${backgroundColor}`
+    })
+})
 
 changeColors()
 start(true);
