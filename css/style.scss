@@ -37,7 +37,11 @@
     border: 1px solid lightgrey;
 }
 
-
+ul{
+    padding: 0;
+    margin: 2px;
+    display: flex;
+}
 /******************************************
 /* LAYOUT
 /*******************************************/
@@ -47,7 +51,6 @@
     width: 1000px;
     height: 1000px;
     margin: auto;
-    align-items: center;
 }
 
 
@@ -62,35 +65,68 @@
     margin: 5px;
 }
 
+button{
+    background: none;
+    border: none;
+}
 .mainBtn{
-    flex: 0.1;
+    margin-left: 5%;
+    flex: 1;
     color: white;
-    background-color: rgb(63, 111, 243);
+    font-size: 20px;
+    background-color: white(63, 111, 243);
     border: 1px solid blue;
     border-radius: 3px;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+}
+
+.colors{
+    flex: 1;
     width: 50px;
-    height: 35px;
-    
+    height: 50px;
 }
 
-input{
-    flex: 0.5;
+#red{
+    background-color: red;
+    border: 2px solid black;
 }
 
-#sub{
-    color: black;
-    background-color: lightgreen;
+#green{
+    background-color: green;
+    border: 2px solid black;
+}
+
+#blue{
+    background-color: blue;
+    border: 2px solid black;
+}
+
+#yellow{
+    background-color: yellow;
+    border: 2px solid black;
+}
+
+#black{
+    background-color: black;
+    border: 2px solid black;
 }
 
 /******************************************
 /* STATE
 /*******************************************/
 .alternate{
-    background-color: red;
+    background-color: black;
 }
 
 
-
+#colBar{
+    margin-right: 50px;
+    width: 500px;
+    list-style-type: none;
+    gap: 10px;
+}
 
 
 /******************************************

@@ -1,32 +1,39 @@
 
 let divGridSize = 16;
-const divs = document.querySelectorAll(".content");
-const parentGrid =  document.querySelector("#parentGrid");
-const clearBtn = document.querySelector("#clear");
-const submitSize = document.querySelector("#sub");
+let divs,
+parentGrid,
+submitSize;
+
+let clearBtn = document.querySelector("#clear");
 
 
+let colors = document.querySelectorAll(".colors")
 
-
-
-clearBtn.addEventListener("click", start)
-
-
-submitSize.addEventListener("click", () => {
-    divGridSize = document.querySelector("#gridSize").value;
-
-    if (divGridSize <= 0 || divGridSize > 100){
-        alert("Please enter a valid number");
-    }
-    else{
-        start();
-    }
-
+colors.forEach(element => {
+    element.addEventListener("click", () => {
+        element
+    })
 })
 
+document.querySelector("body").ondragstart = () => false;
+
+window.mouseDown = false;
+
+document.onmousedown = () => {
+    window.mouseDown = true;
+}
+
+document.onmouseup = () => {
+    window.mouseDown = false;
+}
+
+
+
+clearBtn.addEventListener("click", () => start(false));
 
 
 function renderGrid(divGridSize){
+
 
     for (let i = 0; i < divGridSize**2; i++){
         const divParent = document.querySelector("#parentGrid");
@@ -38,30 +45,48 @@ function renderGrid(divGridSize){
     }
 }
 
-function start(firstTime = false){
+function start(firstTime){
+
+    divGridSize = 16;
 
     if (!firstTime){
         while (parentGrid.firstChild){
             parentGrid.removeChild(parentGrid.firstChild);
         }
-        divGridSize = window.prompt("Please enter a valid number of grids. More than 0 and maximum 100");
+        while (true){
+            divGridSize = Number(window.prompt("Please enter a valid number of grids. More than 0 and maximum 100"));
+
+            if (divGridSize < 1 || divGridSize > 100){
+                alert("Please enter a valid number");
+            }
+            else{
+                break;
+            }
+        }
+        
     }
 
-    
-    
+    renderGrid(divGridSize)
 
+    divs = document.querySelectorAll(".content");
+    parentGrid =  document.querySelector("#parentGrid");
+    submitSize = document.querySelector("#sub");
+    
+   
+
+    
     divs.forEach(element => {
         element.addEventListener("mouseover", () => {
-            element.classList.add("alternate");
+            if (window.mouseDown){
+                element.classList.add("alternate");
+            }
+            
         })
     })
 
-    
-
-    
-
-    
-    
 }
+
+
+
 
 start(true);
