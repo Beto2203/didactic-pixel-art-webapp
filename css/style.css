@@ -1,0 +1,88 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+.container {
+  width: 960px;
+  height: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.content {
+  flex: 1;
+  border: 1px solid lightgrey;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.align {
+  display: flex;
+  width: 1000px;
+  height: 1000px;
+  margin: auto;
+  align-items: center;
+}
+
+/******************************************
+/* MODULE
+/*******************************************/
+.menu {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin: 5px;
+}
+
+.mainBtn {
+  flex: 0.1;
+  color: white;
+  background-color: #3f6ff3;
+  border: 1px solid blue;
+  border-radius: 3px;
+  width: 50px;
+  height: 35px;
+}
+
+input {
+  flex: 0.5;
+}
+
+#sub {
+  color: black;
+  background-color: lightgreen;
+}
+
+/******************************************
+/* STATE
+/*******************************************/
+.alternate {
+  background-color: red;
+}
+
+/******************************************
+/* OTHER STYLES
+/*******************************************/
+
+/*# sourceMappingURL=style.css.map */
