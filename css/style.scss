@@ -41,6 +41,7 @@ ul{
     padding: 0;
     margin: 2px;
     display: flex;
+    list-style: none;
 }
 /******************************************
 /* LAYOUT
@@ -69,18 +70,7 @@ button{
     background: none;
     border: none;
 }
-.mainBtn{
-    margin-left: 5%;
-    flex: 1;
-    color: white;
-    font-size: 20px;
-    background-color: white(63, 111, 243);
-    border: 1px solid blue;
-    border-radius: 3px;
-    width: 40px;
-    height: 20px;
-    text-align: center;
-}
+
 
 .colors{
     flex: 1;
@@ -93,19 +83,32 @@ button{
     border: 2px solid black;
 }
 
+.red{
+    background-color: red;
+}
+
 #green{
     background-color: green;
     border: 2px solid black;
+}
+.green{
+    background-color: green;
 }
 
 #blue{
     background-color: blue;
     border: 2px solid black;
 }
+.blue{
+    background-color: blue;
+}
 
 #yellow{
     background-color: yellow;
     border: 2px solid black;
+}
+.yellow{
+    background-color: yellow;
 }
 
 #black{
@@ -113,13 +116,36 @@ button{
     border: 2px solid black;
 }
 
-/******************************************
-/* STATE
-/*******************************************/
-.alternate{
+.black{
     background-color: black;
 }
 
+.white{
+    background-color: white;
+}
+
+#optionMenu{
+    width: 200px;
+
+    >*{
+    flex: 1;
+    margin-left: 5%;
+    flex: 1;
+    color: black;
+    font-size: 20px;
+    background-color: white(63, 111, 243);
+    border: 1px solid blue;
+    border-radius: 3px;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    font-size: 18px;
+    }
+}
+
+/******************************************
+/* STATE
+/*******************************************/
 
 #colBar{
     margin-right: 50px;
